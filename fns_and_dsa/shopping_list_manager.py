@@ -8,13 +8,12 @@ def display_menu():
 def main():
     shopping_list = []
     while True:
-        print()
         display_menu()
         choice = input("Enter your choice: ")
 
         if choice == '1':
             # Prompt for and add an item
-            new_item = input("Please enter the desired item to be added: ")
+            new_item = input("Enter the item to add: ")
             shopping_list.append(new_item)
         elif choice == '2':
             # Prompt for and remove an item
