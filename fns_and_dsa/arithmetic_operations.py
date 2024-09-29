@@ -9,6 +9,6 @@ def perform_operation(num1, num2, operation):
         case "divide":
             if num2 == 0:
                 result = "Zero is not a valid number to devide by, please insert other"
-            else:
+            elif num2 != 0:
                 result = num1 / num2
     return result
