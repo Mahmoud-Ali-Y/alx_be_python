@@ -7,14 +7,18 @@ def convert_to_fahrenheit(celsius):
     global CELSIUS_TO_FAHRENHEIT_FACTOR
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 def main():
-    temperature = float(input("Enter the temperature to convert: "))
+    temperature = input("Enter the temperature to convert: ")
+    while temperature.isdigit() == False:
+        print("Please enter a numeric value.")
+        temperature = input("Enter the temperature to convert: ")
     type = input("Is this temperature in Celsius or Fahrenheit? (C/F): ")
     match type:
         case "C":
-            fahrenheit = convert_to_fahrenheit(temperature)
+            fahrenheit = convert_to_fahrenheit(int(temperature))
             print(temperature, "°F is ", fahrenheit, "°F")
         case "F":
-            celsius = convert_to_celsius(temperature)
+            celsius = convert_to_celsius(int(temperature))
             print(temperature, "°F is ", celsius, "°C")
+    
 if __name__ == "__main__":
     main()
