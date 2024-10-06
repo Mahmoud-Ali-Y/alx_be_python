@@ -17,13 +17,13 @@ class Library():
             if item[0] == title:
                 Library._books[i] = (item[0], item[1], True)
             i += 1
+    def list_available_books(self):
+        for item in Library._books:
+            if item[2] == False:
+                print(f"\n{item[0]} by {item[1]}")
     def return_book(self, title):
         i = 0
         for item in Library._books:
             if item[0] == title:
                 Library._books[i] = (item[0], item[1], False)
             i += 1
-    def list_available_books(self):
-        for item in Library._books:
-            if item[2] == False:
-                print(f"\n{item[0]} by {item[1]}")
