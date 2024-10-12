@@ -4,18 +4,18 @@ class Book:
         self.author = author
     def __str__(self):
         return f"{self.title} by {self.author}"
-class EBook:
+class EBook(Book):
     def __init__(self, title, author, file_size):
         self.file_size = file_size
-        self.book = Book(title, author)
+        super().__init__(title, author)
     def __str__(self):
-        return f"{self.book.__str__()}, File Size: {self.file_size} "
-class PrintBook:
+        return f"{super().__str__()}, File Size: {self.file_size} "
+class PrintBook(Book):
     def __init__(self, title, author, page_count):
         self.page_count = page_count
-        self.book = Book(title, author)
+        super().__init__ (title, author)
     def __str__(self):
-        return f"{self.book.__str__()}, Page Count: {self.page_count} "
+        return f"{super().__str__()}, Page Count: {self.page_count} "
 class Library:
     books = []
     def add_book(self, book):
